@@ -14,14 +14,13 @@ var sounds = {
 function playDrum(key) {
   var button = document.querySelector("." + key + ".drum");
 
-  if (!button || !sounds[key]) {
-    return;
-  }
+  if (!button || !sounds[key]) return;
 
-  var audio = new Audio("./" + sounds[key]);
+  var audio = new Audio(sounds[key]);
 
   audio.play().catch(function(error) {
-    console.log("Cannot play sound:", error);
+    alert("Sound not found or cannot play: " + sounds[key]);
+    console.log(error);
   });
 
   button.classList.add("pressed");
@@ -38,6 +37,7 @@ buttons.forEach(function(button) {
 });
 
 document.addEventListener("keydown", function(event) {
-  if (event.repeat) return;
-  playDrum(event.key.toLowerCase());
+  if (!event.repeat) {
+    playDrum(event.key.toLowerCase());
+  }
 });
