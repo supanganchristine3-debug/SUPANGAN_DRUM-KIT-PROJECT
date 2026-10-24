@@ -1,13 +1,18 @@
 
 .set {
-  margin: 50px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
 }
+
 
 .drum {
   box-sizing: border-box;
