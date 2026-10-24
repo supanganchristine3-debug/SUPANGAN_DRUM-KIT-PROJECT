@@ -1,23 +1,35 @@
 
-.drum {
-  outline: none;
-  border: 8px solid #404B69;
-  font-size: 3rem;
-  font-family: "Arvo", cursive;
-  font-weight: 900;
-  color: #DA0463;
-  text-shadow: 3px 0 #DBEDF3;
-  border-radius: 15px;
+.set {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 1200px;
+}
 
+.drum {
+  box-sizing: border-box;
+  flex: 0 0 150px;
   width: 150px;
   height: 150px;
-  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+
+  border: 8px solid #404B69;
+  border-radius: 15px;
 
   background-color: white;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 
+  font-size: 3rem;
+  font-family: "Arvo", cursive;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 2px 2px white;
   cursor: pointer;
   transition: 0.1s;
 }
@@ -29,3 +41,12 @@
 .j { background-image: url("./snare.png"); }
 .k { background-image: url("./crash.png"); }
 .l { background-image: url("./kick.png"); }
+
+@media (max-width: 600px) {
+  .drum {
+    flex-basis: 110px;
+    width: 110px;
+    height: 110px;
+    font-size: 2rem;
+  }
+}
